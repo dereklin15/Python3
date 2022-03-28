@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+
+#Decode the cipher. It's totes simple. Forget punctuation and just print the words as they appear.
+
+cipher="We are going to the starbucks, time meow. Attack on titan is pretty insane. At 0530, the BN run will start. Dawn is my favorite dish soap, it's totally dope."
+
+def simple_cipher(str):
+  cipher_list=str.split(".")
+  #print(cipher_list)
+  
+  #answer=[i.split()[0] for i in cipher_list]
+  '''
+  answer=""
+  for value in cipher_list:
+    answer= (value.split()[0])
+  
+  return answer
+  '''
+
+  output=""
+  cipher_length=len(cipher_list)
+  print(cipher_length)
+  counter=0
+  split_sent=""
+
+  for sent in cipher_list:
+    split_sent=sent.split()
+    #print(split_sent)
+    if counter<cipher_length-1:
+      output+=split_sent[0]+" "
+    counter+=1
+    
+ 
+  return output
+
+
+def main():
+  print(simple_cipher(cipher))
+
+
+main()
