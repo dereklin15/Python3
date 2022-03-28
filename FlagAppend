@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+
+import hashlib
+
+numbers="70 83 123 111 114 100 95 97 110 100 95 99 104 114 95 97 114 101 95 121 111 117 114 95 102 114 105 101 110 100 115 95 57 53 69 57 55 54 125"
+list1=[]
+i=numbers.split(" ")
+
+for line in i:
+  x=(chr(int(line)))
+  list1.append(x)
+print("".join(list1))
