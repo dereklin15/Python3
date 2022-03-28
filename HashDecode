@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+
+import hashlib
+
+def match(hash):
+  for x in range(int("1000",16)):
+    x=hex(x).lstrip("0x")
+    x=x.rjust(3,"0")
+    flag="FS{hash-I_had_corned_beef_and_hash_"+str(x.upper())+"}"
+    guess=hashlib.sha512(flag.encode())
+    if guess.hexdigest()==hash:
+      return flag
+  
+
+def main():
+  flag_hash="a497453fe1eee3e0c4d44f2a74a1518744d247a1c6dd6c902a2b3367987f0e5d21fb1cbdd1af55ea78098be5a336ffaf06f19b8e5a5997e06d20ce00f9907424"
+  print(match(flag_hash))
+
+main()
+
+'''
+import hashlib
+
+def match(hash):
+  hexed_num=0
+  for num in range(4096):
+    hexed_num=hex(num)
+    strip_hex=hexed_num.strip("0x")
+    padded_num=strip_hex.zfill(3)
+    padded_num=padded_num.upper()
+    flag="FS{has-I_had_corned_beef_and_has_" +(padded_num)+ "}"
+
+    guess=hashlib.sha512(flag.encode())
+    if guess.hexdigest()==hash:
+        return flag
+      
