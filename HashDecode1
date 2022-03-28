@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+import hashlib
+
+def match(hash):    
+  for num in range(1000):
+    padded_num=f'{num:03}'
+    flag="FS{cabbage-wait_that's_not_right_" + padded_num +"}"
+    guess=hashlib.md5(flag.encode())
+    if guess.hexdigest()==hash:
+      return(flag)
+
+def main():
+  flag_hash="0a3a4cce269fee850e2ae01a1ca461f8"
+  print(match(flag_hash))
+
+main()
