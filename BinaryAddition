@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+
+#There are several binary numbers on each line. Add up the binary numbers on each line and give the correct sum.
+
+binary_string="0b1 0b11 0b111 0b1111 0b11111"
+
+def sum_binary(binary_string):
+  binary_list=binary_string.split()
+
+  sum=0
+  for value in binary_list:
+    sum+=int(value,2) 
+    
+  return sum
+
+
+def main():
+  print(sum_binary(binary_string))
+
+main()
