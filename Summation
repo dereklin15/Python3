@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+
+#Write a program, which takes two distinct integers separated by space as input and prints the sum of all the integers between them, including the two given numbers. Note that the numbers can appear in either order.
+
+import sys
+
+def summation(arg1,arg2):
+  if int(arg1)<int(arg2):
+    num1=int(arg1)
+    num2=int(arg2)
+  elif int(arg1)>int(arg2):
+    num1=int(arg2)
+    num2=int(arg1)
+
+  sum=0
+  if num1<num2:
+    for num in range (num1,(num2)+1):
+      sum+=num
+
+  return sum
+
+
+def main():
+  arg1=sys.argv[1]
+  arg2=sys.argv[2]
+  print(summation(arg1,arg2))
+
+
+main()
