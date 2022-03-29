@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+# Write a function called fix_start with a parameter called word, which represents a string passed in from the command line. Your fix_start function should take in a string, and return a string where all occurrences of its first char have been changed to '*', except do not change the first char itself.
+import sys
+
+def fix_start(word): #creating a funtion fix_start with a parameter of word
+  first_char=word[0] 
+  #creates a variable first_char which is equal to the first character in the input word
+  str2=word[1:] 
+  #creates another variable st2 that starts from the second character in word until the end of the string
+  str2=str2.replace(first_char,"*")
+  #replaces str2 with what the first character in word is with the *
+  str_final=first_char+str2 
+  #created a variable str_final that combines the first character in word with str2 which is the second character in word to the end of the string with the replacement of what the first character is in word with *
+  return(str_final)
+
+
+#main function. created variable arg_1 and imported sys.argv[1] to allow user input in the command line
+def main(): 
+  arg_1=sys.argv[1]
+  print(fix_start(arg_1))
+  #calling the function fix_start with the paramater of arg_1 which is the input from the command line and then printing out the result
+
+main()
+
